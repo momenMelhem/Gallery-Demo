@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.carsgallery"
+    namespace = "com.example.gallery"
     compileSdk = 35
 
     defaultConfig {
