@@ -41,8 +41,6 @@ fun PhotosResponse.toPhotos(): Photos {
     return Photos(
         altDescription = altDescription,
         description = description,
-        links = links,
-        slug = slug,
-        urls = urls
+        url = urls.regular
     )
 }

@@ -1,6 +1,5 @@
 package com.example.gallery.presentation.results
 
-import android.util.Log
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -10,7 +9,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
-import kotlin.math.log
 
 @HiltViewModel
 class ResultsViewModel @Inject constructor(
@@ -25,7 +23,6 @@ class ResultsViewModel @Inject constructor(
     val state = _state
     private fun fetchImages() {
         getImages().onEach { result ->
-
             when (result) {
 
                 is Resource.Success -> {
@@ -38,8 +35,8 @@ class ResultsViewModel @Inject constructor(
                     _state.value = ResultsState(
                         error = result.message ?: "An unexpected error occurred"
                     )
-
                 }
+
                 is Resource.Loading -> {
                     _state?.value = ResultsState(isLoading = true)
                 }
